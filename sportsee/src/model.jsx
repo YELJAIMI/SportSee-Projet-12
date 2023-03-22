@@ -1,5 +1,5 @@
-import Service from "./services/Api";
-import MockService from "./services/Mock";
+import Service from "./Service/Api";
+import MockService from "./Service/Mock";
 
 const activeService = process.env.REACT_APP_MOCK_ACTIVE === "true" ? MockService : Service;
 

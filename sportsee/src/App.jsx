@@ -1,11 +1,11 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import SideNavBar from "./components/SideNavBar";
+import Header from "./Components/Header";
+import SideNavBar from "./Components/SideNavBar";
 
-import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
-import Error from "./pages/Error";
+import Home from "./Pages/Home";
+import Dashboard from "./Pages/Dashboard";
+import Error from "./Pages/Error";
 
 function App() {
 	return (
