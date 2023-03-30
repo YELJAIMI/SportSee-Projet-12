@@ -1,8 +1,9 @@
 import Service from "./Service/Api";
 import MockService from "./Service/Mock";
 
-const activeService = process.env.REACT_APP_MOCK_ACTIVE === "true" ? MockService : Service;
-
+//const activeService = process.env.REACT_APP_MOCK_ACTIVE === true ? MockService : Service;
+const activeService = true ? MockService : Service;
+console.log(activeService)
 /**
  * Class fetches information data model
  */
