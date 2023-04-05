@@ -1,4 +1,4 @@
-import { users, activity, average, performance } from "./mockData";
+import { users, activity, average, performance } from "../Service/mockData";
 
 /**
  *

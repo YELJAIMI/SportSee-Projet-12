@@ -13,6 +13,7 @@ function Header() {
 				<ul>
 					<li>
 						<NavLink
+						exact
 							to="/"
 							className={({ isActive }) => (isActive ? styles.active : "")}
 						>
@@ -20,11 +21,30 @@ function Header() {
 						</NavLink>
 					</li>
 
-					<li>Profil</li>
+					<li> 
+						<NavLink   
+						to="/profil"
+              			className={({ isActive }) => (isActive ? styles.active : "")}> 
+						Profil
+						</NavLink>
+					</li>
 
-					<li>Réglage</li>
+					<li>
+						<NavLink 
+						to="/réglage"
+						className={({ isActive }) => (isActive ? styles.active : "")}> 
+						Réglage
+						</NavLink>
+					</li>
 
-					<li>Communauté</li>
+					<li>
+						<NavLink 
+						to="/communauté"
+						className={({ isActive }) => (isActive ? styles.active : "")}>
+						Communauté
+						</NavLink>
+					</li>
+					
 				</ul>
 			</nav>
 		</header>
