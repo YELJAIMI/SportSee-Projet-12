@@ -6,7 +6,16 @@ import carbs from "../Assets/carbsIcon.png";
 import fat from "../Assets/fatIcon.png";
 import propTypes from "prop-types";
 
-export default function userNutrition({
+/**
+ * Affiche les informations nutritionnelles d'un utilisateur sous forme d'icônes.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {number} props.calorieCount - Le nombre de calories consommées.
+ * @param {number} props.proteinCount - Le nombre de protéines consommées.
+ * @param {number} props.carbohydrateCount - Le nombre de glucides consommés.
+ * @param {number} props.lipidCount - Le nombre de lipides consommés.
+ * @returns {JSX.Element} - Le composant UserNutrition.
+ */
+export default function UserNutrition({
 	calorieCount,
 	proteinCount,
 	carbohydrateCount,
@@ -38,7 +47,7 @@ export default function userNutrition({
 	);
 }
 
-userNutrition.prototype = {
+UserNutrition.prototype = {
 	calorieCount: propTypes.number,
 	proteinCount: propTypes.number,
 	carbohydrateCount: propTypes.number,

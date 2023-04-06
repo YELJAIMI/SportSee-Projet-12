@@ -4,6 +4,14 @@ import propTypes from "prop-types";
 
 import { RadarChart, PolarAngleAxis, Radar, PolarRadiusAxis, PolarGrid } from "recharts";
 
+/**
+ * Composant React représentant un graphique de performance sous forme de radar.
+ *
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array.<Object>} props.data - Les données à afficher sur le graphique.
+ * @param {number} props.data[].value - La valeur à afficher pour cet élément.
+ * @param {number} props.data[].kind - L'identifiant unique de cet élément.
+ */
 function Performance({ data }) {
 	return (
 		<Container>

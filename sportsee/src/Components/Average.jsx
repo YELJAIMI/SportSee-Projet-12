@@ -3,6 +3,14 @@ import propTypes from "prop-types";
 
 import { LineChart, XAxis, YAxis, Tooltip, Line } from "recharts";
 
+
+/**
+ * Composant pour afficher le graphique de durée moyenne des sessions.
+ * @param {Object[]} data - Tableau d'objets contenant les données du graphique.
+ * @param {number} data[].day - Jour de la semaine.
+ * @param {number} data[].sessionLength - Durée moyenne des sessions en minutes.
+ * @returns {JSX.Element} - Element JSX représentant le graphique de durée moyenne des sessions.
+ */
 export default function AverageChart({ data }) {
 	return (
 		<>
@@ -67,6 +75,14 @@ export default function AverageChart({ data }) {
 	);
 }
 
+/**
+ * Composant personnalisé pour le tooltip du graphique.
+ * @param {Object} props - Props du composant.
+ * @param {boolean} props.active - Si le tooltip est actif.
+ * @param {Object[]} props.payload - Tableau d'objets contenant les données à afficher dans le tooltip.
+ * @returns {JSX.Element|null} - Element JSX représentant le tooltip personnalisé ou null si pas de données.
+ */
+
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload && payload.length) {
 		return (
@@ -78,9 +94,21 @@ const CustomTooltip = ({ active, payload }) => {
 	return null;
 };
 
+/**
+ * Composant graphique personnalisé pour l'affichage de l'effet de survol.
+ * @param {Object[]} points - Tableau d'objets contenant les coordonnées du point survolé.
+ * @returns {JSX.Element} - Element JSX représentant l'effet de survol.
+ */
+
 const CustomHover = ({ points }) => {
 	return <rect width="258" height="263" fill="rgba(0, 0, 0, 0.1)" y="5" x={points[0].x} />;
 };
+
+/**
+ * Fonction utilitaire qui retourne le jour de la semaine à partir d'un nombre.
+ * @param {number} day - Le jour de la semaine sous forme de nombre (1 pour lundi, 2 pour mardi, etc.).
+ * @returns {string} - Le jour de la semaine sous forme de lettre (L pour lundi, M pour mardi, etc.).
+ */
 
 const getDay = (day) => Days[day - 1];
 const Days = ["L", "M", "M", "J", "V", "S", "D"];
@@ -92,6 +120,9 @@ const StyleTooltip = styled.div`
 `;
 
 AverageChart.propTypes = {
+	 /**
+   * Données du graphique.
+   */
 	data: propTypes.arrayOf(
 		propTypes.shape({
 			day: propTypes.number,
@@ -101,10 +132,19 @@ AverageChart.propTypes = {
 };
 
 CustomTooltip.propTypes = {
+	/**
+   * Indique si l'infobulle est active.
+   */
 	active: propTypes.bool,
+	/**
+   * Données de l'infobulle.
+   */
 	payload: propTypes.array,
 };
 
 CustomHover.propTypes = {
+	/**
+   * Coordonnées du point survolé.
+   */
 	points: propTypes.array,
 };

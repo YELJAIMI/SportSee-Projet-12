@@ -12,6 +12,15 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 
+/**
+ * Composant pour afficher le graphique d'activité.
+ * @param {Object[]} data - Tableau d'objets contenant les données du graphique.
+ * @param {string} data[].day - Jour de la semaine.
+ * @param {number} data[].kilogram - Poids en kilogrammes.
+ * @param {number} data[].calories - Calories brûlées.
+ * @returns {JSX.Element} - Element JSX représentant le graphique d'activité.
+ */
+
 export default function ActivityChart({ data }) {
 	return (
 		<>
@@ -92,6 +101,12 @@ export default function ActivityChart({ data }) {
 		</>
 	);
 }
+
+/**
+ * Composant pour afficher la tooltip personnalisée du graphique.
+ * @param {boolean} active - Booléen indiquant si la tooltip est active.
+ * @param {Object[]} payload - Tableau d'objets contenant les données affichées dans la tooltip.
+ */
 
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload && payload.length) {

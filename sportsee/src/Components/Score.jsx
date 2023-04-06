@@ -3,11 +3,19 @@ import styled from "styled-components";
 import { PieChart, Pie, Legend } from "recharts";
 import propTypes from "prop-types";
 
+/**
+ * Composant Score qui affiche le score de l'utilisateur sous forme de graphique circulaire.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {number} props.data - Le score de l'utilisateur à afficher, compris entre 0 et 1.
+ * @returns {JSX.Element} - Le code JSX du composant Score.
+ */
 function Score({ data }) {
+	// Création des données du graphique circulaire à partir du score de l'utilisateur.
 	const scoreData = [
 		{ name: "score", value: data, fill: "red" },
 		{ name: "max", value: 1 - data, fill: "#fbfbfb" },
 	];
+	// Création des données pour afficher un cercle blanc au milieu du graphique.
 	const renderMiddleShape = [{ name: "middle", value: 100, fill: "#FFFFFF" }];
 	return (
 		<ContainerChart>
@@ -17,6 +25,7 @@ function Score({ data }) {
 						Score
 					</tspan>
 				</text>
+				{/* Affichage du graphique circulaire représentant le score de l'utilisateur. */}
 				<Pie
 					data={scoreData}
 					dataKey="value"
@@ -30,6 +39,7 @@ function Score({ data }) {
 					stroke="none"
 					cornerRadius={50}
 				/>
+				{/* Affichage d'un cercle blanc au milieu du graphique. */}
 				<Pie
 					data={renderMiddleShape}
 					nameKey="name"
@@ -38,6 +48,7 @@ function Score({ data }) {
 					outerRadius="65%"
 					stroke="none"
 				/>
+				{/* Affichage d'une légende personnalisée. */}
 				<Legend verticalAlign="middle" content={CustomLegend} />
 			</PieChart>
 		</ContainerChart>
@@ -46,6 +57,7 @@ function Score({ data }) {
 
 export default Score;
 
+// Composant fonctionnel qui affiche une légende personnalisée pour le graphique circulaire.
 const CustomLegend = ({ payload }) => (
 	<LegendContainer>
 		<h3>{payload[0].payload.value * 100}%</h3>
@@ -79,6 +91,7 @@ const ContainerChart = styled.div`
 	margin-top: 5px;
 `;
 
+// Définition des types de propriétés pour le composant Score.
 Score.propTypes = {
 	data: propTypes.number,
 };

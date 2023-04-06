@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../Components/Button";
 
+/**
+ * Le composant Home affiche une page d'accueil avec des boutons pour accéder aux pages des utilisateurs.
+ * @function Home
+ * @returns {JSX.Element} Le composant Home avec les boutons pour les utilisateurs.
+ */
+
 function Home() {
 	return (
 		<>

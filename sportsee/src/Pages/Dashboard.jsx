@@ -8,6 +8,14 @@ import Score from "../Components/Score";
 import NutritionSideBar from "../Components/NutritionSideBar";
 import Model from "../model";
 
+
+
+/**
+ * Composant Dashboard qui affiche les données utilisateur
+ * @param {Object} props - Les propriétés du composant
+ * @returns {JSX.Element} Composant Dashboard
+*/
+
 // eslint-disable-next-line no-empty-pattern
 export default function Dashboard({}) {
 	let { id } = useParams();
@@ -22,6 +30,13 @@ export default function Dashboard({}) {
 	const [userPerformance, setUserPerformance] = useState({ data: [] });
 
 	useEffect(() => {
+
+		/**
+		* Récupère les données de l'utilisateur
+		* @async
+		* @function getUserData
+		*/
+
 		const getUserData = async () => {
 			setIsLoading(true);
 			try {
